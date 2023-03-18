@@ -76,7 +76,7 @@ class DLPC350:
                          packetLengthMSB, cmd3, cmd2] + data)
 
     def dumpPacket(self, pkt, response, cmdString):
-        print('[USB HID] SENT: ' + ' '.join('%02x' % i for i in pkt[1:])
+        print('[USB HID] SENT: ' + ' '.join('%02x' % i for i in list(pkt)[1:])
               + ' ' + cmdString)
         if response:
             print('[USB HID] RESPONSE: '
